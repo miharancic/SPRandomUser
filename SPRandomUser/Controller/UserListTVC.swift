@@ -19,6 +19,8 @@ final class UserListTVC: UITableViewController {
         }
     }
 
+    private var page = 1
+
     // MARK: Lifecycle
 
     override func viewDidLoad() {
@@ -26,7 +28,7 @@ final class UserListTVC: UITableViewController {
 
         registerCells()
         configureUI()
-        fetch()
+        fetch(page: page)
     }
 
     // MARK: Helpers
@@ -39,12 +41,13 @@ final class UserListTVC: UITableViewController {
         tableView.tableFooterView = UIView()
     }
 
-    private func fetch() {
-        network.fetch { [weak self] (result) in
+    private func fetch(page: Int) {
+        network.fetch(page: page) { [weak self] (result) in
             switch result {
             case .success(let data):
                 if let res = data.results {
                     self?.dataSource.append(contentsOf: res)
+                    self?.page += 1
                 }
             case .failure(let error):
                 print(error)
@@ -66,5 +69,15 @@ extension UserListTVC {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? UserListCell
         cell?.update(with: dataSource[indexPath.row])
         return cell ?? UITableViewCell()
+    }
+}
+
+// MARK: - UITableViewDataSourcePrefetching
+
+extension UserListTVC: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        if indexPaths.contains(where: { $0.row >= dataSource.count - 1 }) {
+            fetch(page: page)
+        }
     }
 }

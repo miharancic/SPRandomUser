@@ -18,8 +18,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
-                            <outlet property="dataSource" destination="Twc-7e-gd6" id="ZWH-ts-Kx6"/>
-                            <outlet property="delegate" destination="Twc-7e-gd6" id="ATh-Xl-eF6"/>
+                            <outlet property="dataSource" destination="Twc-7e-gd6" id="c5F-vw-KKB"/>
+                            <outlet property="delegate" destination="Twc-7e-gd6" id="wet-0O-xBC"/>
+                            <outlet property="prefetchDataSource" destination="Twc-7e-gd6" id="Zyy-li-F8b"/>
                         </connections>
                     </tableView>
                 </tableViewController>

@@ -9,8 +9,8 @@
 import Foundation
 
 extension Network {
-    func fetch(completion: @escaping APICallback<UserResult>) {
-        let request = API.RandomUsers()
+    func fetch(page: Int, completion: @escaping APICallback<UserResult>) {
+        let request = API.RandomUsers(page: page)
         sendRequest(request, completion: completion)
     }
 }
@@ -23,9 +23,11 @@ extension Network.API {
 
         var params: [String : Any] {
             return [
-                "page": 1,
+                "page": page,
                 "results": 30
             ]
         }
+
+        let page: Int
     }
 }
