@@ -12,6 +12,7 @@
 		044897552373478100EE16C0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044897542373478100EE16C0 /* NetworkError.swift */; };
 		044897592373488800EE16C0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044897582373488800EE16C0 /* Network.swift */; };
 		0448975C2373493800EE16C0 /* UserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448975B2373493800EE16C0 /* UserResult.swift */; };
+		0448975F23734A4600EE16C0 /* RandomUsers+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448975E23734A4600EE16C0 /* RandomUsers+Fetch.swift */; };
 		0479B76B2372127D00DEE393 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479B76A2372127D00DEE393 /* AppDelegate.swift */; };
 		0479B76D2372127D00DEE393 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479B76C2372127D00DEE393 /* ViewController.swift */; };
 		0479B7702372127D00DEE393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0479B76E2372127D00DEE393 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		044897542373478100EE16C0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		044897582373488800EE16C0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		0448975B2373493800EE16C0 /* UserResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResult.swift; sourceTree = "<group>"; };
+		0448975E23734A4600EE16C0 /* RandomUsers+Fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomUsers+Fetch.swift"; sourceTree = "<group>"; };
 		0479B7672372127D00DEE393 /* SPRandomUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPRandomUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0479B76A2372127D00DEE393 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0479B76C2372127D00DEE393 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				0448974E237346AF00EE16C0 /* Protocol.swift */,
 				044897582373488800EE16C0 /* Network.swift */,
+				0448975D23734A2B00EE16C0 /* API */,
 				04489757237347D300EE16C0 /* Network Utils */,
 			);
 			path = Backend;
@@ -75,6 +78,14 @@
 				0448975B2373493800EE16C0 /* UserResult.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0448975D23734A2B00EE16C0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0448975E23734A4600EE16C0 /* RandomUsers+Fetch.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		0479B75E2372127D00DEE393 = {
@@ -244,6 +255,7 @@
 			files = (
 				0479B76D2372127D00DEE393 /* ViewController.swift in Sources */,
 				0479B76B2372127D00DEE393 /* AppDelegate.swift in Sources */,
+				0448975F23734A4600EE16C0 /* RandomUsers+Fetch.swift in Sources */,
 				044897592373488800EE16C0 /* Network.swift in Sources */,
 				04489753237346DB00EE16C0 /* Configuration.swift in Sources */,
 				0448974F237346AF00EE16C0 /* Protocol.swift in Sources */,
