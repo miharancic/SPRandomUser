@@ -11,6 +11,7 @@
 		04489753237346DB00EE16C0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04489752237346DB00EE16C0 /* Configuration.swift */; };
 		044897552373478100EE16C0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044897542373478100EE16C0 /* NetworkError.swift */; };
 		044897592373488800EE16C0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044897582373488800EE16C0 /* Network.swift */; };
+		0448975C2373493800EE16C0 /* UserResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448975B2373493800EE16C0 /* UserResult.swift */; };
 		0479B76B2372127D00DEE393 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479B76A2372127D00DEE393 /* AppDelegate.swift */; };
 		0479B76D2372127D00DEE393 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479B76C2372127D00DEE393 /* ViewController.swift */; };
 		0479B7702372127D00DEE393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0479B76E2372127D00DEE393 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		04489752237346DB00EE16C0 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		044897542373478100EE16C0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		044897582373488800EE16C0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		0448975B2373493800EE16C0 /* UserResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResult.swift; sourceTree = "<group>"; };
 		0479B7672372127D00DEE393 /* SPRandomUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPRandomUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0479B76A2372127D00DEE393 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0479B76C2372127D00DEE393 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 			path = "Network Utils";
 			sourceTree = "<group>";
 		};
+		0448975A2373491700EE16C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0448975B2373493800EE16C0 /* UserResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0479B75E2372127D00DEE393 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +102,7 @@
 				0479B76C2372127D00DEE393 /* ViewController.swift */,
 				0479B76E2372127D00DEE393 /* Main.storyboard */,
 				04489756237347AB00EE16C0 /* Backend */,
+				0448975A2373491700EE16C0 /* Model */,
 				0479B7712372127F00DEE393 /* Assets.xcassets */,
 				0479B7732372127F00DEE393 /* LaunchScreen.storyboard */,
 				0479B7762372127F00DEE393 /* Info.plist */,
@@ -236,6 +247,7 @@
 				044897592373488800EE16C0 /* Network.swift in Sources */,
 				04489753237346DB00EE16C0 /* Configuration.swift in Sources */,
 				0448974F237346AF00EE16C0 /* Protocol.swift in Sources */,
+				0448975C2373493800EE16C0 /* UserResult.swift in Sources */,
 				044897552373478100EE16C0 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
