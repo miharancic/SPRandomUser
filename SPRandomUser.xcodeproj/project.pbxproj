@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041204ED2374D2F700FF8880 /* StringInterpolation+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041204EC2374D2F700FF8880 /* StringInterpolation+Helpers.swift */; };
 		043005DF2374CD2900198F13 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043005DE2374CD2900198F13 /* ImageStore.swift */; };
 		043005E22374CE3100198F13 /* UIImageView+CachedOrFetchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043005E12374CE3100198F13 /* UIImageView+CachedOrFetchImage.swift */; };
 		0448974F237346AF00EE16C0 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448974E237346AF00EE16C0 /* Protocol.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041204EC2374D2F700FF8880 /* StringInterpolation+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringInterpolation+Helpers.swift"; sourceTree = "<group>"; };
 		043005DE2374CD2900198F13 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		043005E12374CE3100198F13 /* UIImageView+CachedOrFetchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+CachedOrFetchImage.swift"; sourceTree = "<group>"; };
 		0448974E237346AF00EE16C0 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				043005E12374CE3100198F13 /* UIImageView+CachedOrFetchImage.swift */,
+				041204EC2374D2F700FF8880 /* StringInterpolation+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				043005DF2374CD2900198F13 /* ImageStore.swift in Sources */,
 				046D9E4923749B960057F98B /* UserListCell.swift in Sources */,
 				0479B76B2372127D00DEE393 /* AppDelegate.swift in Sources */,
+				041204ED2374D2F700FF8880 /* StringInterpolation+Helpers.swift in Sources */,
 				0448975F23734A4600EE16C0 /* RandomUsers+Fetch.swift in Sources */,
 				044897592373488800EE16C0 /* Network.swift in Sources */,
 				04489753237346DB00EE16C0 /* Configuration.swift in Sources */,

@@ -29,9 +29,9 @@ final class UserListCell: UITableViewCell {
     // MARK: API
 
     func update(with user: UserResult.User) {
-        firstName.text = "First name: \(user.name?.first ?? "")"
-        lastName.text = "Last name: \(user.name?.last ?? "")"
-        age.text = "Age: \(user.dob?.age ?? 0)"
+        firstName.text = "First name: \(unwrapping: user.name?.first)"
+        lastName.text = "Last name: \(unwrapping: user.name?.last)"
+        age.text = "Age: \(unwrapping: user.dob?.age)"
 
         profile.cachedOrFetchImage(from: user.picture?.url)
         flag.cachedOrFetchImage(from: user.flag)
