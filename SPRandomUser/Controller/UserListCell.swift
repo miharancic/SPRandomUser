@@ -32,6 +32,9 @@ final class UserListCell: UITableViewCell {
         firstName.text = "First name: \(user.name?.first ?? "")"
         lastName.text = "Last name: \(user.name?.last ?? "")"
         age.text = "Age: \(user.dob?.age ?? 0)"
+
+        profile.cachedOrFetchImage(from: user.picture?.url)
+        flag.cachedOrFetchImage(from: user.flag)
     }
     
 }

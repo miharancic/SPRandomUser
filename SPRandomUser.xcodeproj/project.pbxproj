@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043005DF2374CD2900198F13 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043005DE2374CD2900198F13 /* ImageStore.swift */; };
+		043005E22374CE3100198F13 /* UIImageView+CachedOrFetchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043005E12374CE3100198F13 /* UIImageView+CachedOrFetchImage.swift */; };
 		0448974F237346AF00EE16C0 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448974E237346AF00EE16C0 /* Protocol.swift */; };
 		04489753237346DB00EE16C0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04489752237346DB00EE16C0 /* Configuration.swift */; };
 		044897552373478100EE16C0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044897542373478100EE16C0 /* NetworkError.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		043005DE2374CD2900198F13 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		043005E12374CE3100198F13 /* UIImageView+CachedOrFetchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+CachedOrFetchImage.swift"; sourceTree = "<group>"; };
 		0448974E237346AF00EE16C0 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		04489752237346DB00EE16C0 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		044897542373478100EE16C0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -56,6 +60,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		043005E02374CD4E00198F13 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				043005E32374CE7700198F13 /* Heleprs */,
+				043005E42374CE8700198F13 /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		043005E32374CE7700198F13 /* Heleprs */ = {
+			isa = PBXGroup;
+			children = (
+				043005DE2374CD2900198F13 /* ImageStore.swift */,
+			);
+			path = Heleprs;
+			sourceTree = "<group>";
+		};
+		043005E42374CE8700198F13 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				043005E12374CE3100198F13 /* UIImageView+CachedOrFetchImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		04489756237347AB00EE16C0 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +158,7 @@
 				04489756237347AB00EE16C0 /* Backend */,
 				0448975A2373491700EE16C0 /* Model */,
 				0448976023734BF600EE16C0 /* Controller */,
+				043005E02374CD4E00198F13 /* Utilities */,
 				0479B7712372127F00DEE393 /* Assets.xcassets */,
 				0479B7762372127F00DEE393 /* Info.plist */,
 			);
@@ -268,12 +298,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043005DF2374CD2900198F13 /* ImageStore.swift in Sources */,
 				046D9E4923749B960057F98B /* UserListCell.swift in Sources */,
 				0479B76B2372127D00DEE393 /* AppDelegate.swift in Sources */,
 				0448975F23734A4600EE16C0 /* RandomUsers+Fetch.swift in Sources */,
 				044897592373488800EE16C0 /* Network.swift in Sources */,
 				04489753237346DB00EE16C0 /* Configuration.swift in Sources */,
 				0448974F237346AF00EE16C0 /* Protocol.swift in Sources */,
+				043005E22374CE3100198F13 /* UIImageView+CachedOrFetchImage.swift in Sources */,
 				0448975C2373493800EE16C0 /* UserResult.swift in Sources */,
 				044897552373478100EE16C0 /* NetworkError.swift in Sources */,
 				0448976223734C3300EE16C0 /* UserListTVC.swift in Sources */,

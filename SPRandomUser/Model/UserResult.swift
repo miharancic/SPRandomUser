@@ -32,3 +32,16 @@ struct UserResult: Decodable {
         }
     }
 }
+
+extension UserResult.User {
+    var flag: URL? {
+        let code = (nat ?? "").lowercased()
+        return URL(string: "https://www.countryflags.io/\(code)/flat/64.png")
+    }
+}
+
+extension UserResult.User.Picture {
+    var url: URL? {
+        return URL(string: medium ?? "")
+    }
+}
