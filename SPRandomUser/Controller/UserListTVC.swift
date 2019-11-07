@@ -34,10 +34,13 @@ final class UserListTVC: UITableViewController {
     // MARK: Helpers
 
     private func registerCells() {
-        tableView.register(UserListCell.self, forCellReuseIdentifier: UserListCell.identifier)
+        let nib = UINib(nibName: "UserListCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "UserListCell")
     }
 
     private func configureUI() {
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
         tableView.tableFooterView = UIView()
     }
 
@@ -65,7 +68,7 @@ extension UserListTVC {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = UserListCell.identifier
+        let identifier = "UserListCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? UserListCell
         cell?.update(with: dataSource[indexPath.row])
         return cell ?? UITableViewCell()

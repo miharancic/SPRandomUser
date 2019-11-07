@@ -13,11 +13,22 @@ struct UserResult: Decodable {
 
     struct User: Decodable {
         let name: Name?
+        let dob: Dob?
+        let picture: Picture?
+        let nat: String?
 
         struct Name: Decodable {
-            let title: String?
             let first: String?
             let last: String?
+        }
+
+        struct Dob: Decodable {
+            let age: Int?
+        }
+
+        struct Picture: Decodable {
+            let large: String?
+            let medium: String?
         }
     }
 }

@@ -2,7 +2,7 @@
 //  UserListCell.swift
 //  SPRandomUser
 //
-//  Created by Mihailo Rancic on 06/11/2019.
+//  Created by Mihailo Rancic on 07/11/2019.
 //  Copyright © 2019 Mihailo Rancic. All rights reserved.
 //
 
@@ -10,27 +10,28 @@ import UIKit
 
 final class UserListCell: UITableViewCell {
 
-    // MARK: Cell Identifier
+    // MARK: Outlets
 
-    static let identifier = "UserListCell"
+    @IBOutlet weak var profile: UIImageView!
+    @IBOutlet weak var flag: UIImageView!
+    @IBOutlet weak var firstName: UILabel!
+    @IBOutlet weak var lastName: UILabel!
+    @IBOutlet weak var age: UILabel!
 
     // MARK: Lifecycle
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        profile.layer.cornerRadius = profile.frame.width * 0.5
     }
 
     // MARK: API
 
     func update(with user: UserResult.User) {
-        guard let name = user.name else { return }
-
-        textLabel?.text = name.first
-        detailTextLabel?.text = name.last
+        firstName.text = "First name: \(user.name?.first ?? "")"
+        lastName.text = "Last name: \(user.name?.last ?? "")"
+        age.text = "Age: \(user.dob?.age ?? 0)"
     }
-
+    
 }
