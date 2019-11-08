@@ -14,14 +14,12 @@ final class UserDetailView: UIView {
 
     private let mainStack = UIStackView()
 
-    private let imageStack = UIStackView()
     private let image = UIImageView()
-    private let email = UILabel()
 
-    private let nameStack = UIStackView()
-    private let firstName = UILabel()
-    private let lastName = UILabel()
+    private let labelStack = UIStackView()
+    private let name = UILabel()
     private let age = UILabel()
+    private let email = UILabel()
 
     // MARK: Init
 
@@ -39,54 +37,51 @@ final class UserDetailView: UIView {
 
     func update(with user: UserResult.User?) {
         image.getImage(with: user?.picture?.largeURL)
-        email.text = "e-mail: \(unwrapping: user?.email)"
-        firstName.text = "First name: \(unwrapping: user?.name?.first)"
-        lastName.text = "Last name: \(unwrapping: user?.name?.last)"
+        name.text = "\(unwrapping: user?.name?.last), \(unwrapping: user?.name?.first)"
         age.text = "Age: \(unwrapping: user?.dob?.age)"
+        email.text = "\(unwrapping: user?.email)"
     }
 
     // MARK: Helpers
 
     private func configure() {
-        configureImageStack()
-        configureNameStack()
+        configureLabelStack()
         configureMainStack()
         configureLayout()
     }
 
-    private func configureImageStack() {
-        imageStack.axis = .vertical
-        imageStack.distribution = .fillProportionally
-        imageStack.alignment = .center
-    }
-
-    private func configureNameStack() {
-        nameStack.axis = .vertical
-        nameStack.distribution = .fillEqually
-        nameStack.alignment = .leading
+    private func configureLabelStack() {
+        labelStack.axis = .vertical
+        labelStack.distribution = .fillProportionally
+        labelStack.alignment = .leading
+        labelStack.spacing = 10
     }
 
     private func configureMainStack() {
-        mainStack.axis = .vertical
-        mainStack.distribution = .fillProportionally
+        mainStack.axis = .horizontal
+        mainStack.distribution = .equalCentering
         mainStack.alignment = .center
+        mainStack.spacing = 20
     }
 
     private func configureLayout() {
-        imageStack.addArrangedSubview(image, constraints: [
+        mainStack.addArrangedSubview(image, constraints: [
             image.heightAnchor.constraint(equalToConstant: 150),
             image.widthAnchor.constraint(equalToConstant: 150)
         ])
-        imageStack.addArrangedSubview(email)
-        nameStack.addArrangedSubviews([firstName, lastName, age])
-        mainStack.addArrangedSubviews([imageStack, nameStack])
+        labelStack.addArrangedSubviews([name, age])
+        mainStack.addArrangedSubview(labelStack)
 
         addSubviews([
             mainStack : [
-                mainStack.leadingAnchor.constraint(equalTo: leadingAnchor),
-                mainStack.topAnchor.constraint(equalTo: topAnchor),
-                mainStack.trailingAnchor.constraint(equalTo: trailingAnchor),
+                mainStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+                mainStack.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+                mainStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
                 mainStack.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ],
+            email: [
+                email.topAnchor.constraint(equalTo: mainStack.bottomAnchor, constant: 20),
+                email.centerXAnchor.constraint(equalTo: centerXAnchor)
             ]
         ])
     }
