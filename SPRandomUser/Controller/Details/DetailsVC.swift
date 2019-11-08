@@ -46,3 +46,10 @@ final class DetailsVC: UIViewController {
     }
 
 }
+
+// MARK: - Creatable
+
+extension DetailsVC: Creatable {
+    typealias ViewController = DetailsVC
+    static var storyboard = "Details"
+}

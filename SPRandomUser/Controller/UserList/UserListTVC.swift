@@ -80,11 +80,9 @@ extension UserListTVC {
 
 extension UserListTVC {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Details", bundle: nil)
-        if let vc = storyboard.instantiateInitialViewController() as? DetailsVC {
-            vc.user = dataSource[indexPath.row]
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        let detailsVC = DetailsVC.create()
+        detailsVC.user = dataSource[indexPath.row]
+        navigationController?.show(detailsVC, sender: self)
     }
 }
 
