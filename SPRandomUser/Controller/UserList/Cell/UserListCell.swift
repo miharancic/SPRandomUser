@@ -26,6 +26,13 @@ final class UserListCell: UITableViewCell {
         profile.layer.cornerRadius = profile.frame.width * 0.5
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        profile.image = nil
+        flag.image = nil
+    }
+
     // MARK: API
 
     func update(with user: UserResult.User) {
