@@ -38,7 +38,7 @@ final class UserDetailView: UIView {
     // MARK: API
 
     func update(with user: UserResult.User?) {
-        image.cachedOrFetchImage(from: user?.picture?.largeURL)
+        image.getImage(with: user?.picture?.largeURL)
         email.text = "e-mail: \(unwrapping: user?.email)"
         firstName.text = "First name: \(unwrapping: user?.name?.first)"
         lastName.text = "Last name: \(unwrapping: user?.name?.last)"
