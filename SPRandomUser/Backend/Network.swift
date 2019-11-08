@@ -17,21 +17,30 @@ struct Network: APIClient {
     // MARK: Properties
 
     private let sessionManager = Alamofire.SessionManager(configuration: .default)
+    private let networkQueue = DispatchQueue(label: "Network.Queue", qos: .userInitiated)
 
     // MARK: API
 
     func sendRequest<T: Decodable>(_ request: APIRequest, completion: @escaping APICallback<T>) {
-        sessionManager.request(request).validate().responseJSON { (response) in
+        sessionManager.request(request).validate().responseJSON(queue: networkQueue) { (response) in
             if let data = response.data {
-                do {
-                    let value = try JSONDecoder().decode(T.self, from: data)
-                    completion(.success(value))
-                } catch {
-                    completion(.failure(error))
+                DispatchQueue.main.async {
+                    self.handleData(data, completion: completion)
                 }
             } else {
                 completion(.failure(NetworkError.unexpectedData))
             }
+        }
+    }
+
+    // MARK: Helpers
+
+    private func handleData<T: Decodable>(_ data: Data, completion: APICallback<T>) {
+        do {
+            let value = try JSONDecoder().decode(T.self, from: data)
+            completion(.success(value))
+        } catch {
+            completion(.failure(error))
         }
     }
 
