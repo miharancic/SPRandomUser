@@ -39,6 +39,7 @@ final class UserListTVC: UITableViewController {
     }
 
     private func configureUI() {
+        navigationItem.title = "User List"
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
         tableView.tableFooterView = UIView()
@@ -72,6 +73,18 @@ extension UserListTVC {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? UserListCell
         cell?.update(with: dataSource[indexPath.row])
         return cell ?? UITableViewCell()
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension UserListTVC {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Details", bundle: nil)
+        if let vc = storyboard.instantiateInitialViewController() as? DetailsVC {
+            vc.user = dataSource[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 

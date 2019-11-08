@@ -33,7 +33,7 @@ final class UserListCell: UITableViewCell {
         lastName.text = "Last name: \(unwrapping: user.name?.last)"
         age.text = "Age: \(unwrapping: user.dob?.age)"
 
-        profile.cachedOrFetchImage(from: user.picture?.url)
+        profile.cachedOrFetchImage(from: user.picture?.mediumURL)
         flag.cachedOrFetchImage(from: user.flag)
     }
     

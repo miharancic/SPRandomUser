@@ -27,6 +27,7 @@
 		0479B7752372127F00DEE393 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0479B7732372127F00DEE393 /* LaunchScreen.storyboard */; };
 		04F2F0282375E2DF00BDD7F7 /* UIView+LayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2F0272375E2DF00BDD7F7 /* UIView+LayoutHelpers.swift */; };
 		04F2F02A2375E2F300BDD7F7 /* UIStackView+LayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2F0292375E2F300BDD7F7 /* UIStackView+LayoutHelpers.swift */; };
+		04F2F02C2375E39600BDD7F7 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2F02B2375E39600BDD7F7 /* UserDetailView.swift */; };
 		9A934935FCA3B71811504F11 /* Pods_SPRandomUser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC6E016B2C4A994B162FAEC /* Pods_SPRandomUser.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		0479B7762372127F00DEE393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F2F0272375E2DF00BDD7F7 /* UIView+LayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LayoutHelpers.swift"; sourceTree = "<group>"; };
 		04F2F0292375E2F300BDD7F7 /* UIStackView+LayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+LayoutHelpers.swift"; sourceTree = "<group>"; };
+		04F2F02B2375E39600BDD7F7 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		917D252174AB34904EB70114 /* Pods-SPRandomUser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPRandomUser.release.xcconfig"; path = "Target Support Files/Pods-SPRandomUser/Pods-SPRandomUser.release.xcconfig"; sourceTree = "<group>"; };
 		A61705D4BAB76D1B8CA86FAA /* Pods-SPRandomUser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPRandomUser.debug.xcconfig"; path = "Target Support Files/Pods-SPRandomUser/Pods-SPRandomUser.debug.xcconfig"; sourceTree = "<group>"; };
 		AFC6E016B2C4A994B162FAEC /* Pods_SPRandomUser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SPRandomUser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,8 +202,17 @@
 			children = (
 				045421062375E14A00D9FBCA /* DetailsVC.swift */,
 				045421042375E10500D9FBCA /* Details.storyboard */,
+				04F2F02D2375E3A900BDD7F7 /* Components */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		04F2F02D2375E3A900BDD7F7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				04F2F02B2375E39600BDD7F7 /* UserDetailView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		674FC258C10CAA35199D1DBF /* Pods */ = {
@@ -350,6 +361,7 @@
 				0448975C2373493800EE16C0 /* UserResult.swift in Sources */,
 				044897552373478100EE16C0 /* NetworkError.swift in Sources */,
 				045421072375E14A00D9FBCA /* DetailsVC.swift in Sources */,
+				04F2F02C2375E39600BDD7F7 /* UserDetailView.swift in Sources */,
 				04F2F0282375E2DF00BDD7F7 /* UIView+LayoutHelpers.swift in Sources */,
 				0448976223734C3300EE16C0 /* UserListTVC.swift in Sources */,
 				04F2F02A2375E2F300BDD7F7 /* UIStackView+LayoutHelpers.swift in Sources */,

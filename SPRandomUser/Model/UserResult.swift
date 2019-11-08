@@ -16,6 +16,7 @@ struct UserResult: Decodable {
         let dob: Dob?
         let picture: Picture?
         let nat: String?
+        let email: String?
 
         struct Name: Decodable {
             let first: String?
@@ -41,7 +42,10 @@ extension UserResult.User {
 }
 
 extension UserResult.User.Picture {
-    var url: URL? {
+    var mediumURL: URL? {
         return URL(string: "\(unwrapping: medium)")
+    }
+    var largeURL: URL? {
+        return URL(string: "\(unwrapping: large)")
     }
 }
