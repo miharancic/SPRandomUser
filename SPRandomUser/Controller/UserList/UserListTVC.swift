@@ -12,6 +12,7 @@ final class UserListTVC: UITableViewController {
 
     // MARK: Properties
 
+    private let loadingVC = LoadingVC.create()
     private let network = Network()
     private var dataSource = [UserResult.User]() {
         didSet {
@@ -28,6 +29,7 @@ final class UserListTVC: UITableViewController {
 
         registerCells()
         configureUI()
+        configureLoadingVC()
         fetch(page: page)
     }
 
@@ -45,11 +47,23 @@ final class UserListTVC: UITableViewController {
         tableView.tableFooterView = UIView()
     }
 
+    private func configureLoadingVC() {
+        let layoutGuide = view.safeAreaLayoutGuide
+        add(loadingVC)
+        loadingVC.view.activateConstraints([
+            loadingVC.view.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor),
+            loadingVC.view.topAnchor.constraint(equalTo: layoutGuide.topAnchor),
+            loadingVC.view.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor),
+            loadingVC.view.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor)
+        ])
+    }
+
     private func fetch(page: Int) {
         network.fetch(page: page) { [weak self] (result) in
             switch result {
             case .success(let data):
                 if let res = data.results {
+                    self?.loadingVC.remove()
                     self?.dataSource.append(contentsOf: res)
                     self?.page += 1
                 }
