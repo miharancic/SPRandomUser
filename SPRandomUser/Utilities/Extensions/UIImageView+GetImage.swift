@@ -9,10 +9,15 @@
 import UIKit
 
 extension UIImageView {
-    func getImage(with url: URL?, then completion: (() -> Void)? = nil) {
-        UIImage.cachedOrFetch(from: url, completion: { [weak self] (image, _) in
-            self?.image = image
-            completion?()
-        })
+    func getImage(with url: URL?, completion: ((Error?) -> Void)? = nil) {
+        ImageStore.shared.retrieveImage(with: url) { [weak self] (result) in
+            switch result {
+            case .success(let image):
+                self?.image = image
+                completion?(nil)
+            case .failure(let error):
+                completion?(error)
+            }
+        }
     }
 }
