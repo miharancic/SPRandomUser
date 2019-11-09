@@ -24,6 +24,7 @@
 		0479B7702372127D00DEE393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0479B76E2372127D00DEE393 /* Main.storyboard */; };
 		0479B7722372127F00DEE393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0479B7712372127F00DEE393 /* Assets.xcassets */; };
 		0479B7752372127F00DEE393 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0479B7732372127F00DEE393 /* LaunchScreen.storyboard */; };
+		04C6F915237629C70076B499 /* MailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6F914237629C70076B499 /* MailComposer.swift */; };
 		04F2F0282375E2DF00BDD7F7 /* UIView+LayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2F0272375E2DF00BDD7F7 /* UIView+LayoutHelpers.swift */; };
 		04F2F02A2375E2F300BDD7F7 /* UIStackView+LayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2F0292375E2F300BDD7F7 /* UIStackView+LayoutHelpers.swift */; };
 		04F2F02C2375E39600BDD7F7 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2F02B2375E39600BDD7F7 /* UserDetailView.swift */; };
@@ -53,6 +54,7 @@
 		0479B7712372127F00DEE393 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0479B7742372127F00DEE393 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0479B7762372127F00DEE393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04C6F914237629C70076B499 /* MailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposer.swift; sourceTree = "<group>"; };
 		04F2F0272375E2DF00BDD7F7 /* UIView+LayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LayoutHelpers.swift"; sourceTree = "<group>"; };
 		04F2F0292375E2F300BDD7F7 /* UIStackView+LayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+LayoutHelpers.swift"; sourceTree = "<group>"; };
 		04F2F02B2375E39600BDD7F7 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				043005DE2374CD2900198F13 /* ImageStore.swift */,
 				04F2F02E2375E5EF00BDD7F7 /* Creatable.swift */,
+				04C6F914237629C70076B499 /* MailComposer.swift */,
 			);
 			path = Heleprs;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				0448975C2373493800EE16C0 /* UserResult.swift in Sources */,
 				044897552373478100EE16C0 /* NetworkError.swift in Sources */,
 				045421072375E14A00D9FBCA /* DetailsVC.swift in Sources */,
+				04C6F915237629C70076B499 /* MailComposer.swift in Sources */,
 				04F2F02C2375E39600BDD7F7 /* UserDetailView.swift in Sources */,
 				04F2F0282375E2DF00BDD7F7 /* UIView+LayoutHelpers.swift in Sources */,
 				0448976223734C3300EE16C0 /* UserListTVC.swift in Sources */,

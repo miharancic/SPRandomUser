@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol UserDetailViewDelegate: class {
+    func didTapEmailLabel(for recepient: String)
+}
+
 final class UserDetailView: UIView {
 
     // MARK: Outlets
@@ -20,6 +24,10 @@ final class UserDetailView: UIView {
     private let name = UILabel()
     private let age = UILabel()
     private let email = UILabel()
+
+    // MARK: Properties
+
+    weak var delegate: UserDetailViewDelegate?
 
     // MARK: Init
 
@@ -42,12 +50,24 @@ final class UserDetailView: UIView {
         email.text = "\(unwrapping: user?.email)"
     }
 
+    // MARK: Action
+
+    @objc
+    private func didTapEmailLabel(_ sender: UITapGestureRecognizer) {
+        guard
+            let label = sender.view as? UILabel,
+            let address = label.text
+        else { return }
+        delegate?.didTapEmailLabel(for: address)
+    }
+
     // MARK: Helpers
 
     private func configure() {
         configureLabelStack()
         configureMainStack()
         configureLayout()
+        configureGestureRecognizer()
     }
 
     private func configureLabelStack() {
@@ -77,13 +97,21 @@ final class UserDetailView: UIView {
                 mainStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
                 mainStack.topAnchor.constraint(equalTo: topAnchor, constant: 15),
                 mainStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
-                mainStack.bottomAnchor.constraint(equalTo: bottomAnchor)
+                mainStack.bottomAnchor.constraint(equalTo: email.topAnchor, constant: -20)
             ],
             email: [
                 email.topAnchor.constraint(equalTo: mainStack.bottomAnchor, constant: 20),
-                email.centerXAnchor.constraint(equalTo: centerXAnchor)
+                email.centerXAnchor.constraint(equalTo: centerXAnchor),
+                email.bottomAnchor.constraint(equalTo: bottomAnchor)
             ]
         ])
+    }
+
+    private func configureGestureRecognizer() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapEmailLabel(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        email.addGestureRecognizer(tapGesture)
+        email.isUserInteractionEnabled = true
     }
 
 }

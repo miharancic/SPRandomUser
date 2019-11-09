@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 final class DetailsVC: UIViewController {
 
@@ -19,8 +20,14 @@ final class DetailsVC: UIViewController {
     var user: UserResult.User? {
         didSet {
             detailView.update(with: user)
+            detailView.delegate = self
         }
     }
+
+    private lazy var mailComposer: MailComposer = {
+        let mc = MailComposer(in: self)
+        return mc
+    }()
 
     // MARK: Lifecycle
 
@@ -45,6 +52,14 @@ final class DetailsVC: UIViewController {
         ])
     }
 
+}
+
+// MARK: - UserDetailViewDelegate
+
+extension DetailsVC: UserDetailViewDelegate {
+    func didTapEmailLabel(for recepient: String) {
+        mailComposer.sendEmail(to: recepient)
+    }
 }
 
 // MARK: - Creatable
