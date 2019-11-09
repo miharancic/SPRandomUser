@@ -19,6 +19,7 @@ final class UserDetailView: UIView {
     private let mainStack = UIStackView()
 
     private let image = UIImageView()
+    private let activity = UIActivityIndicatorView(style: .gray)
 
     private let labelStack = UIStackView()
     private let name = UILabel()
@@ -44,7 +45,9 @@ final class UserDetailView: UIView {
     // MARK: API
 
     func update(with user: UserResult.User?) {
-        image.getImage(with: user?.picture?.largeURL)
+        image.getImage(with: user?.picture?.largeURL) { [weak self] _ in
+            self?.activity.stopAnimating()
+        }
         name.text = "\(unwrapping: user?.name?.last), \(unwrapping: user?.name?.first)"
         age.text = "Age: \(unwrapping: user?.dob?.age)"
         email.text = "\(unwrapping: user?.email)"
@@ -67,6 +70,7 @@ final class UserDetailView: UIView {
         configureLabelStack()
         configureMainStack()
         configureLayout()
+        configureActivityIndicator()
         configureGestureRecognizer()
     }
 
@@ -84,7 +88,16 @@ final class UserDetailView: UIView {
         mainStack.spacing = 20
     }
 
+    private func configureActivityIndicator() {
+        activity.hidesWhenStopped = true
+        activity.startAnimating()
+    }
+
     private func configureLayout() {
+        image.addSubview(activity, constraints: [
+            activity.centerXAnchor.constraint(equalTo: image.centerXAnchor),
+            activity.centerYAnchor.constraint(equalTo: image.centerYAnchor)
+        ])
         mainStack.addArrangedSubview(image, constraints: [
             image.heightAnchor.constraint(equalToConstant: 150),
             image.widthAnchor.constraint(equalToConstant: 150)

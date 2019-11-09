@@ -13,6 +13,7 @@ final class UserListCell: UITableViewCell {
     // MARK: Outlets
 
     @IBOutlet weak var profile: UIImageView!
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var flag: UIImageView!
     @IBOutlet weak var firstName: UILabel!
     @IBOutlet weak var lastName: UILabel!
@@ -40,7 +41,9 @@ final class UserListCell: UITableViewCell {
         lastName.text = "Last name: \(unwrapping: user.name?.last)"
         age.text = "Age: \(unwrapping: user.dob?.age)"
 
-        profile.getImage(with: user.picture?.mediumURL)
+        profile.getImage(with: user.picture?.mediumURL) { [weak self] _ in
+            self?.activity.stopAnimating()
+        }
         flag.getImage(with: user.flag)
     }
     

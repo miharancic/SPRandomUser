@@ -56,10 +56,15 @@
                             </label>
                         </subviews>
                     </stackView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gYa-jP-RgA">
+                        <rect key="frame" x="40" y="40" width="20" height="20"/>
+                    </activityIndicatorView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="23K-ut-DRS" firstAttribute="leading" secondItem="vYO-aw-nPQ" secondAttribute="trailing" constant="15" id="2ne-fm-GxF"/>
+                    <constraint firstItem="gYa-jP-RgA" firstAttribute="centerY" secondItem="vYO-aw-nPQ" secondAttribute="centerY" id="3vO-SZ-eqq"/>
                     <constraint firstItem="svE-V1-aL8" firstAttribute="leading" secondItem="23K-ut-DRS" secondAttribute="trailing" constant="15" id="63Y-lD-HX7"/>
+                    <constraint firstItem="gYa-jP-RgA" firstAttribute="centerX" secondItem="vYO-aw-nPQ" secondAttribute="centerX" id="8bd-3B-qdF"/>
                     <constraint firstAttribute="bottom" secondItem="23K-ut-DRS" secondAttribute="bottom" constant="9.5" id="9hP-ls-KDu"/>
                     <constraint firstAttribute="trailing" secondItem="svE-V1-aL8" secondAttribute="trailing" constant="15" id="GWT-gu-j9Y"/>
                     <constraint firstItem="23K-ut-DRS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="doq-2D-49Q"/>
@@ -70,6 +75,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="activity" destination="gYa-jP-RgA" id="xA3-Hn-3Nc"/>
                 <outlet property="age" destination="ETN-5k-9h9" id="Cjh-jL-Tee"/>
                 <outlet property="firstName" destination="cwi-4k-TFS" id="2Pc-ei-CsG"/>
                 <outlet property="flag" destination="svE-V1-aL8" id="NDN-DZ-BfB"/>
