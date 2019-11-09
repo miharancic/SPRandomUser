@@ -30,16 +30,11 @@ struct ImageStore {
             completion(.success(cached))
         } else {
             fetchImage(with: url) { (result) in
-                switch result {
-                case .success(let image):
-                    self.cache(image, key: url.absoluteString)
-                    completion(.success(image))
-                case .failure(let error):
-                    completion(.failure(error))
+                DispatchQueue.main.async {
+                    self.handleFetchResult(result, for: url, completion: completion)
                 }
             }
         }
-
     }
 
     // MARK: Helpers
@@ -56,6 +51,17 @@ struct ImageStore {
             } catch {
                 completion(.failure(error))
             }
+        }
+    }
+
+    private func handleFetchResult(_ result: Result<UIImage, Error>, for url: URL,
+                                   completion: @escaping ImageStoreCallback) {
+        switch result {
+        case .success(let image):
+            cache(image, key: url.absoluteString)
+            completion(.success(image))
+        case .failure(let error):
+            completion(.failure(error))
         }
     }
 

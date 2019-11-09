@@ -23,17 +23,21 @@ struct Network: APIClient {
 
     func sendRequest<T: Decodable>(_ request: APIRequest, completion: @escaping APICallback<T>) {
         sessionManager.request(request).validate().responseJSON(queue: networkQueue) { (response) in
-            if let data = response.data {
-                DispatchQueue.main.async {
-                    self.handleData(data, completion: completion)
-                }
-            } else {
-                completion(.failure(NetworkError.unexpectedData))
+            DispatchQueue.main.async {
+                self.handleResponse(response, completion: completion)
             }
         }
     }
 
     // MARK: Helpers
+
+    private func handleResponse<T: Decodable>(_ response: DataResponse<Any>, completion: APICallback<T>) {
+        if let data = response.data {
+            self.handleData(data, completion: completion)
+        } else {
+            completion(.failure(NetworkError.unexpectedData))
+        }
+    }
 
     private func handleData<T: Decodable>(_ data: Data, completion: APICallback<T>) {
         do {
