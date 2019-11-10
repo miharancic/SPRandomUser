@@ -32,6 +32,7 @@ final class UserListCell: UITableViewCell {
 
         profile.image = nil
         flag.image = nil
+        activity.startAnimating()
     }
 
     // MARK: API

@@ -50,7 +50,7 @@ final class UserDetailView: UIView {
         }
         name.text = "\(unwrapping: user?.name?.last), \(unwrapping: user?.name?.first)"
         age.text = "Age: \(unwrapping: user?.dob?.age)"
-        email.text = "\(unwrapping: user?.email)"
+        email.attributedText = attributedLink(from: user?.email)
     }
 
     // MARK: Action
@@ -125,6 +125,16 @@ final class UserDetailView: UIView {
         tapGesture.numberOfTapsRequired = 1
         email.addGestureRecognizer(tapGesture)
         email.isUserInteractionEnabled = true
+    }
+
+    private func attributedLink(from string: String?) -> NSAttributedString {
+        let linkAttributes: [NSAttributedString.Key : Any] = [
+            .foregroundColor: UIColor.blue,
+            .underlineColor: UIColor.blue,
+            .underlineStyle: NSUnderlineStyle.single.rawValue
+        ]
+        let unwrapped = "\(unwrapping: string)"
+        return NSAttributedString(string: unwrapped, attributes: linkAttributes)
     }
 
 }
