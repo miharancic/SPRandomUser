@@ -1,0 +1,6 @@
+framework module Pods_SPRandomUserTests {
+  umbrella header "Pods-SPRandomUserTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
